@@ -1,30 +1,30 @@
 # @author FlashSoft
-# == ×Ô¶¨ÒåÅäÖÃ ==============================================
+# == è‡ªå®šä¹‰é…ç½® ==============================================
 
-# ÅäÖÃnoderedµÄ½ÓÊÕµØÖ·
+# é…ç½®noderedçš„æ¥æ”¶åœ°å€
 nodered_url="http://192.168.1.22:1880"
 
-# Éè¶¨asrÀ¹½Ø´Ê,ÒÔÊúÏß·Ö¸îÃ¿¸öÀ¹½Ø´Ê
+# è®¾å®šasræ‹¦æˆªè¯,ä»¥ç«–çº¿åˆ†å‰²æ¯ä¸ªæ‹¦æˆªè¯
 asr_keywords=""
 
-# Éè¶¨resÀ¹½Ø´Ê,ÒÔÊúÏß·Ö¸îÃ¿¸öÀ¹½Ø´Ê
+# è®¾å®šresæ‹¦æˆªè¯,ä»¥ç«–çº¿åˆ†å‰²æ¯ä¸ªæ‹¦æˆªè¯
 res_keywords=""
 
-# ÅäÖÃ´Ónodered¸üĞÂÀ¹½Ø´ÊµÄ¼ä¸ô,µ¥Î»Ãë
-# 0´ú±í²»¸üĞÂ,Ò»Ö±Ê¹ÓÃ±¾µØÀ¹½Ø´Ê
-# ´óÓÚ0Ôò¸üĞÂ,»á´ÓÉÏÃæÉè¶¨µÄnodered_urlÈ¥»ñÈ¡À¹½Ø´Ê,²¢¸²¸Ç±¾µØµÄÀ¹½Ø´Ê
+# é…ç½®ä»noderedæ›´æ–°æ‹¦æˆªè¯çš„é—´éš”,å•ä½ç§’
+# 0ä»£è¡¨ä¸æ›´æ–°,ä¸€ç›´ä½¿ç”¨æœ¬åœ°æ‹¦æˆªè¯
+# å¤§äº0åˆ™æ›´æ–°,ä¼šä»ä¸Šé¢è®¾å®šçš„nodered_urlå»è·å–æ‹¦æˆªè¯,å¹¶è¦†ç›–æœ¬åœ°çš„æ‹¦æˆªè¯
 keywords_update_timeout=10
 
-# NodeRedÕËºÅÃÜÂë
+# NodeRedè´¦å·å¯†ç 
 #nodered_auth=":"
 nodered_auth="root:vvpivcol"  #bytt
-# Ğ¡°®asrÈÕÖ¾µØÖ·
+# å°çˆ±asræ—¥å¿—åœ°å€
 asr_file="/tmp/mipns/mibrain/mibrain_asr.log"
-# Ğ¡°®resÈÕÖ¾µØÖ·
+# å°çˆ±resæ—¥å¿—åœ°å€
 res_file="/tmp/mipns/mibrain/mibrain_response.log"
-# == /×Ô¶¨ÒåÅäÖÃ ==============================================
+# == /è‡ªå®šä¹‰é…ç½® ==============================================
  
-# ½â¾ö¿ÉÄÜ´æÔÚµÚÒ»´ÎÎÄ¼ş²»´æÔÚÎÊÌâ
+# è§£å†³å¯èƒ½å­˜åœ¨ç¬¬ä¸€æ¬¡æ–‡ä»¶ä¸å­˜åœ¨é—®é¢˜
 touch ${asr_file}
 touch ${res_file} 
 res_md5=""
@@ -32,106 +32,106 @@ last_time="0"
 
 echo "==============================================================="
 echo ""
-echo "      NodeRed·şÎñµØÖ·: ${nodered_url}"
-echo "      NodeRedÕËºÅÃÜÂë: `[ "${nodered_auth}" == ":" ] && echo "ÎŞÃÜÂë" || echo "ÓĞÃÜÂë"`     "
-echo "            asrÀ¹½Ø´Ê: `[ "${asr_keywords}" == "" ] && echo "ÎŞÀ¹½Ø´Ê" || echo ${asr_keywords}`    "
-echo "            resÀ¹½Ø´Ê: `[ "${res_keywords}" == "" ] && echo "ÎŞÀ¹½Ø´Ê" || echo ${res_keywords}`    "
-echo "       À¹½Ø´Ê¸üĞÂÆµÂÊ: `[ "${keywords_update_timeout}" == "0" ] && echo "²»¸üĞÂ" || echo ${keywords_update_timeout}`    "
+echo "      NodeRedæœåŠ¡åœ°å€: ${nodered_url}"
+echo "      NodeRedè´¦å·å¯†ç : `[ "${nodered_auth}" == ":" ] && echo "æ— å¯†ç " || echo "æœ‰å¯†ç "`     "
+echo "            asræ‹¦æˆªè¯: `[ "${asr_keywords}" == "" ] && echo "æ— æ‹¦æˆªè¯" || echo ${asr_keywords}`    "
+echo "            resæ‹¦æˆªè¯: `[ "${res_keywords}" == "" ] && echo "æ— æ‹¦æˆªè¯" || echo ${res_keywords}`    "
+echo "       æ‹¦æˆªè¯æ›´æ–°é¢‘ç‡: `[ "${keywords_update_timeout}" == "0" ] && echo "ä¸æ›´æ–°" || echo ${keywords_update_timeout}`    "
 echo ""
 echo "==============================================================="
 
 
-echo "¿ªÊ¼ÑéÖ¤NodeRed·ÃÎÊÊÇ·ñÍ¨³©"
+echo "å¼€å§‹éªŒè¯NodeRedè®¿é—®æ˜¯å¦é€šç•…"
 echo ""
-header=`curl --insecure ¨Cconnect-timeout 2 -m 2 -sI -u "${nodered_auth}" ${nodered_url}`
+header=`curl --insecure â€“connect-timeout 2 -m 2 -sI -u "${nodered_auth}" ${nodered_url}`
 if [ -z "`echo ${header}`" ];then
-  echo "ÑéÖ¤²»Í¨¹ı: NodeRedÍøÖ·²»Í¨"
+  echo "éªŒè¯ä¸é€šè¿‡: NodeRedç½‘å€ä¸é€š"
   exit
 else
   if [ -z "`echo "${header}" |grep 'HTTP/'|awk '($2==200){print 1}'`" ];then
-    echo "ÑéÖ¤²»Í¨¹ı: NodeRed½Ó¿Ú×´Ì¬Öµ·Ç200 [¿ÉÄÜÃÜÂë²»ÕıÈ·]"
+    echo "éªŒè¯ä¸é€šè¿‡: NodeRedæ¥å£çŠ¶æ€å€¼é200 [å¯èƒ½å¯†ç ä¸æ­£ç¡®]"
     exit
   else
-    echo "ÑéÖ¤Í¨¹ı"
+    echo "éªŒè¯é€šè¿‡"
   fi
-fi
+fi 
  
 while true;do
-  # ¼ÆËãmd5Öµ 
+  # è®¡ç®—md5å€¼ 
   new_md5=`md5sum ${res_file} | awk '{print $1}'`
-  # Èç¹ûÊÇµÚÒ»´Î,¾Í¸³Öµ±È½ÏÓÃµÄmd5
+  # å¦‚æœæ˜¯ç¬¬ä¸€æ¬¡,å°±èµ‹å€¼æ¯”è¾ƒç”¨çš„md5
   [ -z ${res_md5} ] && res_md5=${new_md5}
-  # Èç¹ûmd5²»µÈÔòÎÄ¼ş±ä»¯
+  # å¦‚æœmd5ä¸ç­‰åˆ™æ–‡ä»¶å˜åŒ–
   if [[ ${new_md5} != ${res_md5} ]];then
-    # ¼ÇÂ¼md5±ä»¯ºó½á¹û
+    # è®°å½•md5å˜åŒ–åç»“æœ
     res_md5=${new_md5}
     
-    # »ñÈ¡asrÄÚÈİ
+    # è·å–asrå†…å®¹
     asr_content=`cat ${asr_file}`
-    # »ñÈ¡resÄÚÈİ
+    # è·å–reså†…å®¹
     res_content=`cat ${res_file}`
 
     
     miai_domain=`echo "${res_content}"|awk -F '"domain": ' '{print $2}'|awk -F '"' '{print $2}'`
     miai_errcode=`echo "${res_content}"|awk -F '\"extend\":' '{print $2}'|awk -F '\"code\": ' '{print $2}'|awk -F ',' '($1>200){print $1}'`
 
-    echo "== ÓĞÄÚÈİ¸üĞÂ | domain: ${miai_domain} errcode: ${miai_errcode}"
+    echo "== æœ‰å†…å®¹æ›´æ–° | domain: ${miai_domain} errcode: ${miai_errcode}"
     
     if ([[ ! -z ${asr_keywords} ]] && [[  ! -z `echo "${asr_content}"|awk 'match($0,/'${asr_keywords}'/){print 1}'` ]]) || ([[ ! -z ${res_keywords} ]] && [[  ! -z `echo "${res_content}"|awk 'match($0,/'${res_keywords}'/){print 1}'` ]]) || [ ${miai_errcode} ];then
-      echo "== ÊÔÍ¼Í£Ö¹"
+      echo "== è¯•å›¾åœæ­¢"
 
-      # @TODO: doaminÊÇscenesµÄÇé¿öÏÂ,ÔİÍ£²¥·Å,¼ÇÂ¼²¥·Å×´Ì¬²¢ÔİÍ£ÒÔ¼°¼ÌĞø²¥·ÅÊ±ÓĞÎÊÌâµÄ
-      # ÎªÁË±£Ö¤²»Ó°ÏìÔİÍ£Ğ§¹û,ËùÒÔµ÷Õû²»Í¬µÄÍ£Ö¹²¥·Å·½Ê½
+      # @TODO: doaminæ˜¯scenesçš„æƒ…å†µä¸‹,æš‚åœæ’­æ”¾,è®°å½•æ’­æ”¾çŠ¶æ€å¹¶æš‚åœä»¥åŠç»§ç»­æ’­æ”¾æ—¶æœ‰é—®é¢˜çš„
+      # ä¸ºäº†ä¿è¯ä¸å½±å“æš‚åœæ•ˆæœ,æ‰€ä»¥è°ƒæ•´ä¸åŒçš„åœæ­¢æ’­æ”¾æ–¹å¼
       if [ "${miai_domain}" != "scenes" ];then
-        echo "== ÆäËûÄ£Ê½ | ${miai_domain}"
-        # Èô¸ÉÑ­»·,Ö±µ½resume³É¹¦Ò»´ÎÖ±½ÓÌø³ö
+        echo "== å…¶ä»–æ¨¡å¼ | ${miai_domain}"
+        # è‹¥å¹²å¾ªç¯,ç›´åˆ°resumeæˆåŠŸä¸€æ¬¡ç›´æ¥è·³å‡º
         seq 1 200 | while read line;do
           code=`ubus call mediaplayer player_play_operation {\"action\":\"resume\"}|awk -F 'code":' '{print $2}'`
           if [[ "${code}" -eq "0" ]];then
-            echo "== Í£Ö¹³É¹¦"
+            echo "== åœæ­¢æˆåŠŸ"
             break
           fi
           sleep 0
         done
       else
-        echo "== ³¡¾°Ä£Ê½ | ${miai_domain}"
+        echo "== åœºæ™¯æ¨¡å¼ | ${miai_domain}"
         seq 1 10 | while read line;do
           ubus call mediaplayer player_play_operation {\"action\":\"stop\"} > /dev/null 2>&1
           sleep 0
         done
       fi
  
-      # ¼ÇÂ¼²¥·Å×´Ì¬²¢ÔİÍ£,·½±ãÔÚHA·şÎñÆ÷´¦ÀíÂß¼­µÄÊ±ºò²»»á²å²¥ÒôÀÖ,0ÎªÎ´²¥·Å,1Îª²¥·ÅÖĞ,2ÎªÔİÍ£
+      # è®°å½•æ’­æ”¾çŠ¶æ€å¹¶æš‚åœ,æ–¹ä¾¿åœ¨HAæœåŠ¡å™¨å¤„ç†é€»è¾‘çš„æ—¶å€™ä¸ä¼šæ’æ’­éŸ³ä¹,0ä¸ºæœªæ’­æ”¾,1ä¸ºæ’­æ”¾ä¸­,2ä¸ºæš‚åœ
       play_status=`ubus -t 1 call mediaplayer player_get_play_status | awk -F 'status' '{print $2}' | cut -c 5`
       if [ "${miai_domain}" != "scenes" ];then
         ubus call mediaplayer player_play_operation {\"action\":\"pause\"} > /dev/null 2>&1
       fi
  
       # @todo:
-      # ×ª·¢asrºÍres¸ø·şÎñ¶Ë½Ó¿Ú,Ô¶¶Ë¿ÉÒÔ´¦Àí¿ØÖÆÂß¼­Íê³Éºó·µ»ØĞèÒª²¥±¨µÄTTSÎÄ±¾
-      # 2ÃëÁ¬½Ó³¬Ê±,4Ãë´«Êä³¬Ê±
-      tts=`curl --insecure ¨Cconnect-timeout 2 -m 2 -s -u "${nodered_auth}" --data-urlencode "asr=${asr_content}" --data-urlencode "res=${res_content}" "${nodered_url}/miai"`
-      echo "== ÇëÇóÍê³É"
+      # è½¬å‘asrå’Œresç»™æœåŠ¡ç«¯æ¥å£,è¿œç«¯å¯ä»¥å¤„ç†æ§åˆ¶é€»è¾‘å®Œæˆåè¿”å›éœ€è¦æ’­æŠ¥çš„TTSæ–‡æœ¬
+      # 2ç§’è¿æ¥è¶…æ—¶,4ç§’ä¼ è¾“è¶…æ—¶
+      tts=`curl --insecure â€“connect-timeout 2 -m 2 -s -u "${nodered_auth}" --data-urlencode "asr=${asr_content}" --data-urlencode "res=${res_content}" "${nodered_url}/miai"`
+      echo "== è¯·æ±‚å®Œæˆ"
 
-      # Èç¹ûÔ¶¶Ë·µ»ØÄÚÈİ²»Îª¿ÕÔòÓÃTTS²¥±¨Ö®
+      # å¦‚æœè¿œç«¯è¿”å›å†…å®¹ä¸ä¸ºç©ºåˆ™ç”¨TTSæ’­æŠ¥ä¹‹
       if [[ -n "${tts}" ]];then
-        echo "== ²¥±¨TTS | TTSÄÚÈİ: ${tts}"
+        echo "== æ’­æŠ¥TTS | TTSå†…å®¹: ${tts}"
         ubus call mibrain text_to_speech "{\"text\":\"${tts}\",\"save\":0}" > /dev/null 2>&1
-        # ×î³¤20ÃëTTS²¥±¨Ê±¼ä,20ÃëÄÚÈç¹û²¥±¨Íê³ÉÌø³ö
+        # æœ€é•¿20ç§’TTSæ’­æŠ¥æ—¶é—´,20ç§’å†…å¦‚æœæ’­æŠ¥å®Œæˆè·³å‡º
         seq 1 20 | while read line;do
           media_type=`ubus -t 1 call mediaplayer player_get_play_status|awk -F 'media_type' '{print $2}'|cut -c 5`
           if [ "${media_type}" == "" ] || [ "${media_type}" -ne "1" ];then
-            echo "== ²¥±¨TTS½áÊø"
+            echo "== æ’­æŠ¥TTSç»“æŸ"
             break
           fi
           sleep 1
         done
       fi
  
-      # Èç¹ûÖ®Ç°ÒôÀÖÊÇ²¥·ÅµÄÔò½Ó×Å²¥·Å
+      # å¦‚æœä¹‹å‰éŸ³ä¹æ˜¯æ’­æ”¾çš„åˆ™æ¥ç€æ’­æ”¾
       if [[ "${play_status}" -eq "1" ]];then
-        echo "== ¼ÌĞø²¥·ÅÒôÀÖ"
-        # ÕâÀïÑÓ³ÙÒ»ÃëÊÇÒòÎªÇ°Ãæ´¦ÀíÈç¹ûÌ«¿ì,¿ÉÄÜÒıÆğ»Ö¸´²¥·Å²»³É¹¦
+        echo "== ç»§ç»­æ’­æ”¾éŸ³ä¹"
+        # è¿™é‡Œå»¶è¿Ÿä¸€ç§’æ˜¯å› ä¸ºå‰é¢å¤„ç†å¦‚æœå¤ªå¿«,å¯èƒ½å¼•èµ·æ¢å¤æ’­æ”¾ä¸æˆåŠŸ
         sleep 1
         if [ "${miai_domain}" != "scenes" ];then
           ubus call mediaplayer player_play_operation {\"action\":\"play\"} > /dev/null 2>&1
@@ -139,19 +139,19 @@ while true;do
       fi
     fi
 
-    log_res=`curl --insecure ¨Cconnect-timeout 2 -m 2 -s -u "${nodered_auth}" --data-urlencode "asr=${asr_content}" --data-urlencode "res=${res_content}" "${nodered_url}/miai/set/log"`
-    echo "== Í¶ÈÕÖ¾ | ${log_res}"
+    log_res=`curl --insecure â€“connect-timeout 2 -m 2 -s -u "${nodered_auth}" --data-urlencode "asr=${asr_content}" --data-urlencode "res=${res_content}" "${nodered_url}/miai/set/log"`
+    echo "== æŠ•æ—¥å¿— | ${log_res}"
   fi
  
-  # ÒÔÄ³Æµ¶ÈÈ¥¸üĞÂÀ¹½Ø´Ê
+  # ä»¥æŸé¢‘åº¦å»æ›´æ–°æ‹¦æˆªè¯
   if [[ "${keywords_update_timeout}" -gt "0" ]];then
     now=`date +%s`
     step=`expr ${now} - ${last_time}`
-    # ¸ù¾İÉè¶¨Ê±¼ä¼ä¸ô»ñÈ¡¸üĞÂ´Ê
+    # æ ¹æ®è®¾å®šæ—¶é—´é—´éš”è·å–æ›´æ–°è¯
     if [[ "$step" -gt "${keywords_update_timeout}" ]];then
-        asr_keywords=`curl --insecure ¨Cconnect-timeout 2 -m 2 -s -u "${nodered_auth}" "${nodered_url}/miai/get/asr"`
-        res_keywords=`curl --insecure ¨Cconnect-timeout 2 -m 2 -s -u "${nodered_auth}" "${nodered_url}/miai/get/res"`
-        echo "== ¸üĞÂ¹Ø¼ü´Ê | asr¹Ø¼ü´ÊÄÚÈİ: ${asr_keywords} | res¹Ø¼ü´ÊÄÚÈİ: ${res_keywords}"
+        asr_keywords=`curl --insecure â€“connect-timeout 2 -m 2 -s -u "${nodered_auth}" "${nodered_url}/miai/get/asr"`
+        res_keywords=`curl --insecure â€“connect-timeout 2 -m 2 -s -u "${nodered_auth}" "${nodered_url}/miai/get/res"`
+        echo "== æ›´æ–°å…³é”®è¯ | asrå…³é”®è¯å†…å®¹: ${asr_keywords} | reså…³é”®è¯å†…å®¹: ${res_keywords}"
         last_time=`date +%s`
     fi
   fi
