@@ -1,105 +1,105 @@
 # @author FlashSoft
 # root=`pwd`
 root=""
-# ½Å±¾´æ·ÅµØÖ·
-#ºÚ°æ mico_path="${root}/root/mico.sh"
+# è„šæœ¬å­˜æ”¾åœ°å€ 
+#é»‘ç‰ˆ mico_path="${root}/root/mico.sh"
 mico_path="${root}/data/mico.sh"
-# ½Å±¾¿ª»úÆô¶¯
-#ºÚ°æ mico_initpath="${root}/etc/init.d/mico_enable"
+# è„šæœ¬å¼€æœºå¯åŠ¨
+#é»‘ç‰ˆ mico_initpath="${root}/etc/init.d/mico_enable"
 mico_initpath="${root}/data/mico_enable"
 mico_tmppath="/tmp"
 rm $mico_initpath > /dev/null 2>&1
 echo "==============================================================="
 echo ""
-echo "     »¶Ó­Ê¹ÓÃ'Ğ¡°®À¹½ØÆ÷'°²×°¹¤¾ß v0.9(2018.10.31)"
+echo "     æ¬¢è¿ä½¿ç”¨'å°çˆ±æ‹¦æˆªå™¨'å®‰è£…å·¥å…· v0.9(2018.10.31)"
 echo ""
-echo "     ±¾¹¤¾ßÍ¨¹ıÀ¹½ØĞ¡°®µÄÊ¶±ğ´ÊºÍÏìÓ¦´Ê"
-echo "     °ÑÀ¹½ØµÄÇëÇó×ª·¢¸øNodeRed·şÎñ½øĞĞ×Ô¶¨ÒåÉè±¸µÄ²Ù×÷"
-echo "     ÂÛÌ³µØÖ· https://bbs.hassbian.com/thread-5110-1-1.html"
+echo "     æœ¬å·¥å…·é€šè¿‡æ‹¦æˆªå°çˆ±çš„è¯†åˆ«è¯å’Œå“åº”è¯"
+echo "     æŠŠæ‹¦æˆªçš„è¯·æ±‚è½¬å‘ç»™NodeRedæœåŠ¡è¿›è¡Œè‡ªå®šä¹‰è®¾å¤‡çš„æ“ä½œ"
+echo "     è®ºå›åœ°å€ https://bbs.hassbian.com/thread-5110-1-1.html"
 echo ""
 echo "==============================================================="
 echo ""
  
-# »·¾³¼ì²â,±ØĞëÎªĞ¡°®»·¾³²Å¼ÌĞø
-[ -z "`uname -a|grep mico`" ] && echo "µ±Ç°²»ÊÇĞ¡°®Éè±¸,Çëµ½Ğ¡°®ÉÏÖ´ĞĞ´ËÃüÁî" && exit
+# ç¯å¢ƒæ£€æµ‹,å¿…é¡»ä¸ºå°çˆ±ç¯å¢ƒæ‰ç»§ç»­
+[ -z "`uname -a|grep mico`" ] && echo "å½“å‰ä¸æ˜¯å°çˆ±è®¾å¤‡,è¯·åˆ°å°çˆ±ä¸Šæ‰§è¡Œæ­¤å‘½ä»¤" && exit
 
 
-echo "[!!!×¢Òâ] ĞèÒªÏÈÓĞNodeRed·şÎñ²¢ÇÒÌá¹©ÁË/miaiÕâÑùµÄget½Ó¿Ú(µ¼ÈëÂÛÌ³Ìá¹©µÄÁ÷¾ÍºÃ)"
-echo "ÇëÊäÈëNodeRed·şÎñµØÖ·,Ä¬ÈÏÖµ[http://nodered:1880]:"
+echo "[!!!æ³¨æ„] éœ€è¦å…ˆæœ‰NodeRedæœåŠ¡å¹¶ä¸”æä¾›äº†/miaiè¿™æ ·çš„getæ¥å£(å¯¼å…¥è®ºå›æä¾›çš„æµå°±å¥½)"
+echo "è¯·è¾“å…¥NodeRedæœåŠ¡åœ°å€,é»˜è®¤å€¼[http://nodered:1880]:"
 read -p "" nodered_url
 [ -z "${nodered_url}" ] && nodered_url="http://nodered:1880"
 
-echo "ÇëÊäÈëÄãµÄNodeRedµÄÕËºÅºÍÃÜÂë,Èç¹ûÃ»ÓĞÃÜÂëÇëÖ±½Ó»Ø³µ:"
-echo "¸ñÊ½Îª ÕËºÅ:ÃÜÂë"
+echo "è¯·è¾“å…¥ä½ çš„NodeRedçš„è´¦å·å’Œå¯†ç ,å¦‚æœæ²¡æœ‰å¯†ç è¯·ç›´æ¥å›è½¦:"
+echo "æ ¼å¼ä¸º è´¦å·:å¯†ç "
 read -p "" nodered_auth
 [ -z "${nodered_auth}" ] && nodered_auth='root:vvpivcol' #bytt
 
-echo "[!!!×¢Òâ] asrÀ¹½Ø´ÊÎªÄã¶ÔĞ¡°®×Ô¼ºËµµÄ»°"
-echo "ÇëÊäÈëasrÀ¹½Ø´Ê,¶à¸öÀ¹½Ø´ÊÊ¹ÓÃ|·Ö¸î,Ä¬ÈÏÖµÎª[¿Õ]:"
+echo "[!!!æ³¨æ„] asræ‹¦æˆªè¯ä¸ºä½ å¯¹å°çˆ±è‡ªå·±è¯´çš„è¯"
+echo "è¯·è¾“å…¥asræ‹¦æˆªè¯,å¤šä¸ªæ‹¦æˆªè¯ä½¿ç”¨|åˆ†å‰²,é»˜è®¤å€¼ä¸º[ç©º]:"
 read -p "" asr_keywords
 [ -z "${asr_keywords}" ] && asr_keywords=""
 
-echo "[!!!×¢Òâ] resÀ¹½Ø´ÊÎªĞ¡°®¶ÔÄãµÄÏìÓ¦ÄÚÈİ"
-echo "ÇëÊäÈëresÀ¹½Ø´Ê,¶à¸öÀ¹½Ø´ÊÊ¹ÓÃ|·Ö¸î,Ä¬ÈÏÖµÎª[¿Õ]:"
+echo "[!!!æ³¨æ„] resæ‹¦æˆªè¯ä¸ºå°çˆ±å¯¹ä½ çš„å“åº”å†…å®¹"
+echo "è¯·è¾“å…¥resæ‹¦æˆªè¯,å¤šä¸ªæ‹¦æˆªè¯ä½¿ç”¨|åˆ†å‰²,é»˜è®¤å€¼ä¸º[ç©º]:"
 read -p "" res_keywords
 [ -z "${res_keywords}" ] && res_keywords=""
 
-echo "ÇëÊäÈëÏìÓ¦À¹½Ø´ÊµÄ¸üĞÂÆµÂÊ,µ¥Î»Ãë,0Îª²»¸üĞÂ,Ä¬ÈÏÖµ[0]:"
+echo "è¯·è¾“å…¥å“åº”æ‹¦æˆªè¯çš„æ›´æ–°é¢‘ç‡,å•ä½ç§’,0ä¸ºä¸æ›´æ–°,é»˜è®¤å€¼[0]:"
 read -p "" keywords_update_timeout
 [ -z "${keywords_update_timeout}" ] && keywords_update_timeout=0
 
 echo "==============================================================="
 echo ""
-echo "      NodeRed·şÎñµØÖ·: ${nodered_url}"
-echo "      NodeRedÕËºÅÃÜÂë: `[ "${nodered_auth}" == ":" ] && echo "ÎŞÃÜÂë" || echo "ÓĞÃÜÂë"`     "
-echo "            asrÀ¹½Ø´Ê: `[ "${asr_keywords}" == "" ] && echo "ÎŞÀ¹½Ø´Ê" || echo ${asr_keywords}`    "
-echo "            resÀ¹½Ø´Ê: `[ "${res_keywords}" == "" ] && echo "ÎŞÀ¹½Ø´Ê" || echo ${res_keywords}`    "
-echo "       À¹½Ø´Ê¸üĞÂÆµÂÊ: `[ "${keywords_update_timeout}" == "0" ] && echo "²»¸üĞÂ" || echo ${keywords_update_timeout}`    "
+echo "      NodeRedæœåŠ¡åœ°å€: ${nodered_url}"
+echo "      NodeRedè´¦å·å¯†ç : `[ "${nodered_auth}" == ":" ] && echo "æ— å¯†ç " || echo "æœ‰å¯†ç "`     "
+echo "            asræ‹¦æˆªè¯: `[ "${asr_keywords}" == "" ] && echo "æ— æ‹¦æˆªè¯" || echo ${asr_keywords}`    "
+echo "            resæ‹¦æˆªè¯: `[ "${res_keywords}" == "" ] && echo "æ— æ‹¦æˆªè¯" || echo ${res_keywords}`    "
+echo "       æ‹¦æˆªè¯æ›´æ–°é¢‘ç‡: `[ "${keywords_update_timeout}" == "0" ] && echo "ä¸æ›´æ–°" || echo ${keywords_update_timeout}`    "
 echo ""
 echo "==============================================================="
 
-echo "ÒÔÉÏĞÅÏ¢ÊÇ·ñÕıÈ·£¿ÈÎÒâ¼ü¼ÌĞø°²×°,ctrl+cÈ¡Ïû°²×°:"
+echo "ä»¥ä¸Šä¿¡æ¯æ˜¯å¦æ­£ç¡®ï¼Ÿä»»æ„é”®ç»§ç»­å®‰è£…,ctrl+cå–æ¶ˆå®‰è£…:"
 read -p "" enterkey
 
-echo "¿ªÊ¼ÑéÖ¤nodered·ÃÎÊÊÇ·ñÍ¨³©"
+echo "å¼€å§‹éªŒè¯noderedè®¿é—®æ˜¯å¦é€šç•…"
 echo ""
-header=`curl --insecure ¨Cconnect-timeout 2 -m 4 -sI -u "${nodered_auth}" ${nodered_url}|head -n 1`
-echo "×´Ì¬ĞÅÏ¢: ${header}"
+header=`curl --insecure â€“connect-timeout 2 -m 4 -sI -u "${nodered_auth}" ${nodered_url}|head -n 1`
+echo "çŠ¶æ€ä¿¡æ¯: ${header}"
 echo ""
 if [ -z "`echo ${header}`" ];then
-  echo "ÑéÖ¤²»Í¨¹ı: NodeRedÍøÖ·²»Í¨"
+  echo "éªŒè¯ä¸é€šè¿‡: NodeRedç½‘å€ä¸é€š"
   exit
 else
   if [[ "`echo $header|awk '{print $2}'`" -eq "401" ]];then
-    echo "ÑéÖ¤²»Í¨¹ı: NodeRedÃÜÂë²»ÕıÈ·"
+    echo "éªŒè¯ä¸é€šè¿‡: NodeRedå¯†ç ä¸æ­£ç¡®"
     exit
   else
-    echo "ÑéÖ¤Í¨¹ı"
+    echo "éªŒè¯é€šè¿‡"
   fi
 fi
 
 if [ -d "/tmp/mibrain" ];then
-  echo "Ğ¡°®¹Ì¼ş°æ±¾: ¾É°æ¹Ì¼ş"
+  echo "å°çˆ±å›ºä»¶ç‰ˆæœ¬: æ—§ç‰ˆå›ºä»¶"
 else
   if [ -d "/tmp/mipns/mibrain" ];then
     mico_tmppath="/tmp/mipns" 
-    echo "Ğ¡°®¹Ì¼ş°æ±¾: ĞÂ°æ¹Ì¼ş"
+    echo "å°çˆ±å›ºä»¶ç‰ˆæœ¬: æ–°ç‰ˆå›ºä»¶"
   else
-    echo "Ğ¡°®¹Ì¼ş°æ±¾: Î´Öª¹Ì¼ş°æ±¾"
+    echo "å°çˆ±å›ºä»¶ç‰ˆæœ¬: æœªçŸ¥å›ºä»¶ç‰ˆæœ¬"
     exit
   fi
 fi
 
-# ÏÂÔØÔ¶³Ì½Å±¾²¢¼ì²éÊÇ·ñ³É¹¦
+# ä¸‹è½½è¿œç¨‹è„šæœ¬å¹¶æ£€æŸ¥æ˜¯å¦æˆåŠŸ
 now=`date +%s`
-mico=`curl --insecure -s ¨Cconnect-timeout 4 -m 4 "https://raw.githubusercontent.com/FlashSoft/mico/dev/mico.sh?${now}"`
+mico=`curl --insecure -s â€“connect-timeout 4 -m 4 "https://raw.githubusercontent.com/FlashSoft/mico/dev/mico.sh?${now}"`
 # mico=`cat ./mico.sh`
 if [[ -z `echo "${mico}"|awk 'match($0,/FlashSoft/){print 1}'` ]];then
-  echo "½Å±¾ÏÂÔØ²»³É¹¦,¿ÉÄÜÄãĞèÒª¸öËáËáÈé"
+  echo "è„šæœ¬ä¸‹è½½ä¸æˆåŠŸ,å¯èƒ½ä½ éœ€è¦ä¸ªé…¸é…¸ä¹³"
   exit
 fi
 
-# Ìæ»»±äÁ¿²¢´æ´¢
+# æ›¿æ¢å˜é‡å¹¶å­˜å‚¨
 echo "${mico}" |
 awk '{gsub("^asr_keywords=.*", "asr_keywords=\"'${asr_keywords}'\""); print $0}' |
 awk '{gsub("^res_keywords=.*", "res_keywords=\"'${res_keywords}'\""); print $0}' |
@@ -111,8 +111,8 @@ awk '{gsub("^nodered_auth=.*", "nodered_auth=\"'${nodered_auth}'\""); print $0}'
 chmod a+x $mico_path
 
 
-# ²¿Êğ½Å±¾
-echo "²¿ÊğÆô¶¯½Å±¾"
+# éƒ¨ç½²è„šæœ¬
+echo "éƒ¨ç½²å¯åŠ¨è„šæœ¬"
 echo "#!/bin/sh /etc/rc.common
 START=96
 start() {
@@ -126,5 +126,5 @@ chmod a+x $mico_initpath > /dev/null 2>&1
 $mico_initpath enable > /dev/null 2>&1
 $mico_initpath stop > /dev/null 2>&1
 
-echo "°²×°Íê±Ï"
-echo "¿ÉÒÔÊ¹ÓÃ/etc/init.d/mico_enable start Æô¶¯Ğ¡°®À¹½ØÆ÷"
+echo "å®‰è£…å®Œæ¯•"
+echo "å¯ä»¥ä½¿ç”¨/etc/init.d/mico_enable start å¯åŠ¨å°çˆ±æ‹¦æˆªå™¨"
