@@ -32,7 +32,7 @@ read -p "" nodered_url
 echo "请输入你的NodeRed的账号和密码,如果没有密码请直接回车:"
 echo "格式为 账号:密码"
 read -p "" nodered_auth
-[ -z "${nodered_auth}" ] && nodered_auth='root:vvpivcol' #bytt
+[ -z "${nodered_auth}" ] && nodered_auth='root:vvvc' #bytt
 
 echo "[!!!注意] asr拦截词为你对小爱自己说的话"
 echo "请输入asr拦截词,多个拦截词使用|分割,默认值为[空]:"
