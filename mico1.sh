@@ -17,7 +17,7 @@ keywords_update_timeout=10
 
 # NodeRed账号密码
 #nodered_auth=":"
-nodered_auth="tvha:vvpivcol"  #bytt
+nodered_auth="root:vvpivcol"  #bytt
 # 小爱asr日志地址
 asr_file="/tmp/mipns/mibrain/mibrain_asr.log"
 # 小爱res日志地址
