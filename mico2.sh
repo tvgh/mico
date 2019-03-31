@@ -14,9 +14,9 @@ keywords_update_timeout=0
 #nodered_auth=":"
 nodered_auth="tvha:vvpivcol"  #bytt
 # 小爱asr日志地址
-asr_file="/tmp/mibrain/mibrain_asr.log"
+asr_file="/tmp/mipns/mibrain/mibrain_asr.log"
 # 小爱res日志地址
-res_file="/tmp/mibrain/mibrain_response.log"
+res_file="/tmp/mipns/mibrain/mibrain_response.log"
 # == /自定义配置 ==============================================
  
 # 解决可能存在第一次文件不存在问题
