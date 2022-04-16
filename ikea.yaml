@@ -46,7 +46,7 @@ blueprint:
           step: 100
           unit_of_measurement: milliseconds
           mode: slider
-      default: 100
+      default: 200
 
 mode: restart
 max_exceeded: silent
