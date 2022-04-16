@@ -46,7 +46,7 @@ blueprint:
           step: 100
           unit_of_measurement: milliseconds
           mode: slider
-      default: 500
+      default: 100
 
 mode: restart
 max_exceeded: silent
@@ -82,7 +82,7 @@ action:
               entity_id: !input light
             data:
               brightness: 254
-              color_temp: 400
+              color_temp: 180
 
       # Short-Press on the dim-up button.
       - conditions:
